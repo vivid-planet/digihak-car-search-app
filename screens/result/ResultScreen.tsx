@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Button, StyleSheet, View } from "react-native";
-import { RootStackParamList } from "../App";
+import { RootStackParamList } from "../../App";
 
 const ResultScreen: React.FunctionComponent = () => {
   const navigation =

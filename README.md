@@ -22,12 +22,14 @@ Demo-Projekt "Fahrzeugsuche" - Praxisworkshop DigiHAK Neumarkt
 
 # 2. Neue App mit Typescript Template erstellen: `npx create-expo-app -t expo-template-blank-typescript`
 
-2. Expo Go App aus App Store / Play Store installieren (Registrierung in App nicht erforderlich)
+2. git repo clonen
 
-3. git repo clonen
+3. `npm install`
 
-4. `npm install`
+4. Sicherstellen, dass prettier und eslint Extensions in VSCode installiert sind und funktionieren
 
-5. `npm run start`
+5. Expo Go App aus App Store / Play Store installieren (Registrierung in App nicht erforderlich)
 
-6. QR Code mit Expo Go (Android) oder Kamera App (iOS) scannen
+6. `npm run start`
+
+7. QR Code mit Expo Go (Android) oder Kamera App (iOS) scannen

@@ -20,7 +20,7 @@ Demo-Projekt "Fahrzeugsuche" - Praxisworkshop DigiHAK Neumarkt
 
 1. [node](https://nodejs.org/en/download) downloaden und installieren
 
-# 2. Neue App mit Typescript Template erstellen: `npx create-expo-app -t expo-template-blank-typescript`
+[comment]: <> (2. Neue App mit Typescript Template erstellen: `npx create-expo-app -t expo-template-blank-typescript`)
 
 2. git repo clonen
 

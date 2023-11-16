@@ -1,6 +1,6 @@
 import { Dimensions, ImageBackground, StyleSheet, Text } from "react-native";
 
-const stageImage = require("../../../assets/stage.jpg");
+const stageImage = require("assets/stage.jpg");
 
 const Stage: React.FunctionComponent = () => {
   const imageHeight = (Dimensions.get("screen").width * 570) / 390;

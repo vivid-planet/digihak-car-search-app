@@ -5,13 +5,8 @@ import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
-import { HomeScreen } from "./screens/home/HomeScreen";
-import { ResultScreen } from "./screens/result/ResultScreen";
-
-export type RootStackParamList = {
-  Home: undefined;
-  Result: undefined;
-};
+import { HomeScreen } from "screens/home/HomeScreen";
+import { ResultScreen } from "screens/result/ResultScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,8 +14,8 @@ SplashScreen.preventAutoHideAsync();
 
 const App: React.FunctionComponent = () => {
   const [fontsLoaded] = useFonts({
-    "OpenSans-Bold": require("./assets/fonts/OpenSans-Bold.ttf"),
-    "OpenSans-Medium": require("./assets/fonts/OpenSans-Medium.ttf"),
+    "OpenSans-Bold": require("assets/fonts/OpenSans-Bold.ttf"),
+    "OpenSans-Medium": require("assets/fonts/OpenSans-Medium.ttf"),
   });
 
   const onLayoutRootView = React.useCallback(async () => {

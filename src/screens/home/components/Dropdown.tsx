@@ -1,29 +1,29 @@
 import * as React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
-import { colors } from "../../../utils/Constants";
+import { colors } from "utils/Constants";
 
-const data = [
-  { label: "Item 1", value: "1" },
-  { label: "Item 2", value: "2" },
-  { label: "Item 3", value: "3" },
-  { label: "Item 4", value: "4" },
-  { label: "Item 5", value: "5" },
-  { label: "Item 6", value: "6" },
-  { label: "Item 7", value: "7" },
-  { label: "Item 8", value: "8" },
-];
+export interface DropdownItem {
+  label: string;
+  value: string;
+}
 
 interface DropdownComponentProps {
   title: string;
-  value: string | null;
-  setValue: (value: string) => void;
+  value: DropdownItem | null;
+  setValue: (value: DropdownItem) => void;
+  data: DropdownItem[];
+  loading: boolean;
+  disabled?: boolean;
 }
 
 const DropdownComponent: React.FunctionComponent<DropdownComponentProps> = ({
   title,
   value,
   setValue,
+  data,
+  loading,
+  disabled,
 }) => {
   const [isFocus, setIsFocus] = React.useState(false);
 
@@ -45,9 +45,13 @@ const DropdownComponent: React.FunctionComponent<DropdownComponentProps> = ({
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
         onChange={(item) => {
-          setValue(item.value);
+          setValue(item);
           setIsFocus(false);
         }}
+        renderLeftIcon={(visible) =>
+          loading ? <ActivityIndicator /> : undefined
+        }
+        disable={disabled}
       />
     </View>
   );

@@ -1,8 +1,8 @@
 export interface Brands {
-  id: number;
-  name: string;
+    id: number;
+    name: string;
 }
 
 export interface Models {
-  model: string;
+    model: string;
 }

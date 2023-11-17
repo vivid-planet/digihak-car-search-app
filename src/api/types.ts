@@ -6,3 +6,11 @@ export interface Brands {
 export interface Models {
     model: string;
 }
+
+export interface Registrations {
+    initial_registration: string;
+}
+
+export interface Fuels {
+    name: string;
+}

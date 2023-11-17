@@ -1,14 +1,11 @@
-import { Dimensions, Image, ImageBackground, StyleSheet, Text } from 'react-native';
+import { Image, ImageBackground, StyleSheet, Text } from 'react-native';
 
 const logoImage = require('assets/logo.png');
 const stageImage = require('assets/stage.jpg');
 
-const Stage: React.FunctionComponent = () => {
-    const imageHeight = (Dimensions.get('screen').width * 570) / 390;
-
+const ResultStage: React.FunctionComponent = () => {
     return (
-        <ImageBackground source={stageImage} style={[styles.stageImage, { height: imageHeight }]} resizeMode="contain">
-            <Text style={styles.title}>Verkaufe dein Auto einfach auf</Text>
+        <ImageBackground source={stageImage} style={styles.stageImage} resizeMode="cover">
             <Image source={logoImage} />
             <Text style={styles.bottomText}>Einfach - Sicher - Schnell</Text>
         </ImageBackground>
@@ -18,17 +15,9 @@ const Stage: React.FunctionComponent = () => {
 const styles = StyleSheet.create({
     stageImage: {
         width: '100%',
+        height: 180,
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    title: {
-        margin: 20,
-        fontFamily: 'OpenSans-Bold',
-        fontSize: 40,
-        lineHeight: 44,
-        textAlign: 'center',
-        fontWeight: '700',
-        color: 'white',
     },
     bottomText: {
         position: 'absolute',
@@ -47,4 +36,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export { Stage };
+export { ResultStage };

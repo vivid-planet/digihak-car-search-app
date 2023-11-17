@@ -52,7 +52,20 @@ const HomeScreen: React.FunctionComponent = () => {
         setSelectedBrand(item);
         setSelectedModel(null);
         setSelectedRegistration(null);
+        setSelectedMileage('');
         setSelectedFuel(null);
+    };
+
+    const onSubmitButtonPressed = () => {
+        if (selectedBrand != null && selectedModel != null && selectedRegistration != null && selectedFuel != null) {
+            navigation.push('Result', {
+                brandId: selectedBrand.value,
+                model: selectedModel.value,
+                registration: selectedRegistration.value,
+                mileage: selectedMileage,
+                fuelId: selectedFuel.value,
+            });
+        }
     };
 
     const brandItems = brandsData?.map((item) => ({
@@ -72,12 +85,16 @@ const HomeScreen: React.FunctionComponent = () => {
 
     const fuelItems = fuelsData?.map((item) => ({
         label: item.name,
-        value: item.name === 'Benzin' ? '1' : '2',
+        value: item.name === 'Benzin' ? '1' : '2', // TODO: helper function to resolve id, or even better, adapt API to add id
     }));
 
     const error = brandsError || modelsError || registrationError || fuelsError;
     const submitButtonDisabled =
-        selectedBrand == null && selectedModel == null && selectedRegistration == null && selectedFuel == null;
+        selectedBrand == null ||
+        selectedModel == null ||
+        selectedRegistration == null ||
+        selectedMileage.length <= 0 ||
+        selectedFuel == null;
 
     return (
         <KeyboardAwareScrollView style={styles.container}>
@@ -123,7 +140,7 @@ const HomeScreen: React.FunctionComponent = () => {
                 />
                 <TouchableOpacity
                     style={[styles.touchableContainer, submitButtonDisabled && { backgroundColor: colors.Neutral300 }]}
-                    onPress={() => navigation.push('Result')}
+                    onPress={onSubmitButtonPressed}
                     disabled={submitButtonDisabled}
                 >
                     <Text style={styles.buttonText}>Jetzt Verkaufspreis erhalten</Text>

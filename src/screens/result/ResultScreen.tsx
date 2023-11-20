@@ -15,7 +15,7 @@ const ResultScreen: React.FunctionComponent = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'aqua',
+        backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
     },

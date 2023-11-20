@@ -27,9 +27,10 @@ const HomeScreen: React.FunctionComponent = () => {
     const { data: modelsData, loading: modelsLoading, error: modelsError } = useFetch<Models[]>(modelsUrl);
 
     // reset other data, when brand is selected
-    React.useEffect(() => {
-        if (selectedBrand) setSelectedModel(null);
-    }, [selectedBrand]);
+    const onSelectBrand = (item: DropdownItem) => {
+        setSelectedBrand(item);
+        setSelectedModel(null);
+    };
 
     const brandItems = brandsData?.map((item) => ({
         label: item.name,
@@ -55,7 +56,7 @@ const HomeScreen: React.FunctionComponent = () => {
                 <DropdownComponent
                     title="Marke"
                     value={selectedBrand}
-                    setValue={setSelectedBrand}
+                    setValue={onSelectBrand}
                     data={brandItems ?? []}
                     loading={brandsLoading}
                 />

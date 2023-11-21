@@ -7,6 +7,7 @@ import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { HomeScreen } from 'screens/home/HomeScreen';
 import { ResultScreen } from 'screens/result/ResultScreen';
+import { StartScreen } from 'screens/start/StartScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,9 +31,10 @@ const App: React.FunctionComponent = () => {
 
     return (
         <View style={styles.container} onLayout={onLayoutRootView}>
-            <StatusBar style="light" />
+            <StatusBar style="dark" />
             <NavigationContainer>
                 <Stack.Navigator>
+                    <Stack.Screen name="Start" component={StartScreen} options={{ headerShown: false }} />
                     <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
                     <Stack.Screen name="Result" component={ResultScreen} options={{ headerShown: false }} />
                 </Stack.Navigator>

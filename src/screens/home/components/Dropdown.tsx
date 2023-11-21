@@ -47,7 +47,7 @@ const DropdownComponent: React.FunctionComponent<DropdownComponentProps> = ({
                     setValue(item);
                     setIsFocus(false);
                 }}
-                renderLeftIcon={(visible) => (loading ? <ActivityIndicator /> : undefined)}
+                renderLeftIcon={() => (loading ? <ActivityIndicator /> : undefined)}
                 disable={disabled}
             />
         </View>

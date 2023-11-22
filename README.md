@@ -2,6 +2,8 @@
 
 Demo-Projekt "Fahrzeugsuche" - Praxisworkshop DigiHAK Neumarkt
 
+[Link zu figma Design](https://www.figma.com/file/s8WvFJ2mRJh1crT2OT8Bca/PMC-App-Design-Final?type=design&node-id=0-1&mode=design)
+
 **Inhalt:**
 
 -   [Car-Search APP](#car-search-app)
